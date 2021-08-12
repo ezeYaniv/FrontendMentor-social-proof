@@ -18,8 +18,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My Github Repo](https://github.com/ezeYaniv/FrontendMentor-social-proof)
-- Live Site URL: [Social Proof hosted on Vercel](https://frontend-mentor-social-proof-avgh7te80-ezeyaniv.vercel.app/)
+- Solution URL: [My Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/social-proof-challenge-using-scss-flexbox-and-mobilefirst-design-oHnPgiUzJ)
+- Live Site URL: [Social Proof hosted on Vercel](https://frontend-mentor-social-proof-ruddy.vercel.app/)
 
 ## My process
 
