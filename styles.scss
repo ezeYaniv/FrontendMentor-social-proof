@@ -90,6 +90,10 @@ h6 {
 body {
 	text-align: center;
   min-height: 100vh;
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .content-wrapper {

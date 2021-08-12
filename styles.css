@@ -61,6 +61,13 @@ body {
   min-height: 100vh;
 }
 
+@media screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .content-wrapper {
   margin: 2rem 1.5rem 4rem;
 }
