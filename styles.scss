@@ -1,0 +1,256 @@
+// ~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~
+// Mobile-first design
+
+// @mixin tab {
+// 	@media screen and (min-width: 768px) and (max-width: 1199px) {
+// 		@content;
+// 	}
+// }
+
+@mixin desktop {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+// ~~~~~~~~~~~~~ VARIABLES ~~~~~~~~~~~~~~~
+
+$color-primary: hsl(300, 43%, 22%);
+$color-secondary: hsl(333, 80%, 67%);
+$color-gray-dark: hsl(303, 10%, 53%);
+$color-gray-light: hsl(300, 24%, 96%);
+$color-white: hsl(0, 0%, 100%);
+
+$border-radius: 10px;
+
+// ~~~~~~~~~~~~~ GLOBAL SETUP ~~~~~~~~~~~~~~~
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+// ~~~~~~~~~~~~~ TYPOGRAPHY ~~~~~~~~~~~~~~~
+
+body {
+	font-family: 'Spartan', sans-serif;
+	font-weight: 400;
+	color: $color-white;
+	line-height: 1.5rem;
+}
+
+p {
+	font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	color: $color-primary;
+}
+
+.heading {
+	&__title {
+		font-size: 2rem;
+	}
+	&__subtitle {
+		font-weight: 500;
+		color: $color-gray-dark;
+	}
+}
+
+.starbox__text {
+	color: $color-primary;
+	font-weight: 700;
+	font-size: 0.9rem;
+}
+
+.testimonial {
+	&__title {
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+	&__verified {
+		color: $color-secondary;
+		font-size: 0.9rem;
+	}
+	&__text {
+		color: $color-gray-light;
+		font-size: 0.9rem;
+	}
+}
+
+// ~~~~~~~~~~~~ CONTAINERS ~~~~~~~~~~~~~~~~
+
+body {
+	text-align: center;
+}
+
+.content-wrapper {
+	margin: 2rem 1.5rem 4rem;
+	@include desktop {
+		margin: 4rem 8rem;
+	}
+}
+
+.upper-wrapper {
+	display: flex;
+	flex-direction: column;
+	@include desktop {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+.heading-section {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 3rem;
+	@include desktop {
+		width: 40%;
+		text-align: left;
+	}
+}
+
+.starbox-section {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 3rem;
+	@include desktop {
+		width: 60%;
+		align-items: flex-end;
+	}
+}
+
+.lower-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 3rem;
+	@include desktop {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
+
+// ~~~~~~~~~~~ HEADING SECTION ~~~~~~~~~~~~~~
+.heading {
+	&__title {
+		margin: 1rem;
+		line-height: 2rem;
+		@include desktop {
+			margin-left: 0;
+			width: 70%;
+		}
+	}
+}
+
+// ~~~~~~~~~~~~ STARBOXES ~~~~~~~~~~~~~~~~
+.starbox {
+	&__card {
+		background-color: $color-gray-light;
+		border-radius: $border-radius;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+		padding: 0.7rem 0;
+		@include desktop {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: left;
+			width: 70%;
+			&:nth-child(1) {
+				margin-right: 6rem;
+			}
+			&:nth-child(2) {
+				margin-right: 3rem;
+			}
+		}
+	}
+	&__starholder {
+		@include desktop {
+			margin-left: 1.5rem;
+		}
+	}
+	&__star {
+		margin: 0.3rem 0;
+		&:not(:last-child) {
+			margin-right: 0.2rem;
+		}
+		@include desktop {
+			margin: 0 inherit;
+		}
+	}
+	&__text {
+		@include desktop {
+			display: inline-block;
+			margin-left: 1.5rem;
+		}
+	}
+}
+
+// ~~~~~~~~~~~~ TESTIMONIALS ~~~~~~~~~~~~~~~~
+.testimonial {
+	&__card {
+		text-align: left;
+		background-color: $color-primary;
+		border-radius: $border-radius;
+		padding: 1.5rem;
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+		@include desktop {
+			flex-grow: 1;
+			&:nth-child(1) {
+				margin-bottom: 4rem;
+			}
+			&:nth-child(2) {
+				margin-bottom: 2rem;
+			}
+			&:not(:last-child) {
+				margin-right: 1.5rem;
+			}
+		}
+	}
+	&__profile {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 1.5rem 0;
+	}
+	&__image {
+		border-radius: 50%;
+		margin-right: 1.5rem;
+		width: 50px;
+	}
+	&__text {
+		margin-bottom: 1rem;
+	}
+}
+// ~~~~~~~~~~~~ BACKGROUND ~~~~~~~~~~~~~~~~
+body {
+	background: url('./images/bg-pattern-top-mobile.svg') no-repeat top left,
+		url('./images/bg-pattern-bottom-mobile.svg') no-repeat bottom right;
+	background-size: contain;
+	@include desktop {
+		background: url('./images/bg-pattern-top-desktop.svg') no-repeat top left,
+			url('./images/bg-pattern-bottom-desktop.svg') no-repeat bottom right;
+		background-size: inherit, contain;
+	}
+}
+
+// ~~~~~~~~~~ ATTRIBUTION ~~~~~~~~~~~~~~
+.attribution {
+  color: $color-primary;
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: $color-primary;
+}
